@@ -1,0 +1,28 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm test:*)",
+      "Bash(ls -R __TRACKED_VAR__/rules)",
+      "Bash(ls -R __TRACKED_VAR__/references)",
+      "Bash(cp -r /Users/wujincheng/workplace/Claude_Tools/vercel-lab-agent-skills/agent-skills/skills/react-best-practices /Users/wujincheng/workplace/OlaChat/H5_repo/pt-zh-web-page/.claude/skills/)",
+      "Bash(cp -r /Users/wujincheng/workplace/Claude_Tools/vercel-lab-agent-skills/agent-skills/skills/web-design-guidelines /Users/wujincheng/workplace/OlaChat/H5_repo/pt-zh-web-page/.claude/skills/)",
+      "Bash(cp -r /Users/wujincheng/workplace/Claude_Tools/vercel-lab-agent-skills/agent-skills/skills/composition-patterns /Users/wujincheng/workplace/OlaChat/H5_repo/pt-zh-web-page/.claude/skills/)",
+      "Read(//Users/wujincheng/workplace/Claude_Tools/asyrafhussin-agent-skills/skills/react-vite-best-practices/**)",
+      "Bash(/bin/ls -a)",
+      "Bash(/bin/ls -la data/)",
+      "Bash(/bin/ls -a act/valentine-love-song-2026/)",
+      "Bash(/bin/ls act/valentine-love-song-2026/src/)",
+      "Bash(/bin/ls act/valentine-love-song-2026/src/common/)",
+      "Bash(/bin/ls act/valentine-love-song-2026/src/components/)",
+      "Bash(/bin/ls act/valentine-love-song-2026/src/service/)",
+      "Bash([ -f \"tools/$d/package.json\" ])",
+      "Bash([ -f \"tools/$d/yarn.lock\" ])",
+      "Bash([ -f \"tools/$d/pnpm-lock.yaml\" ])",
+      "Bash([ -f \"tools/$d/package-lock.json\" ])",
+      "Bash(/bin/ls h5/custom-components/)",
+      "Bash(/bin/ls -a h5-template/)",
+      "Bash(/bin/ls h5/assets/)",
+      "Bash(/bin/ls h5/custom-components/src/)"
+    ]
+  }
+}

@@ -1,0 +1,15 @@
+source_file,target_file,reason
+点击进入@3x.png,src/assets/text/home_event/zh_tw/btn_enter.png,dimension 210x63 exact match
+底图@3x.png,src/assets/text/home_event/zh_tw/bg_main.png,dimension 1125x2763 exact match
+点唱电台@3x.png,src/assets/text/home_event/zh_tw/ic_home_radio_track.png,semantic label match
+冠军赛@3x.png,src/assets/text/home_event/zh_tw/ic_home_champion_track.png,semantic label match
+男神赛道@3x.png,src/assets/text/home_event/zh_tw/ic_home_male_track.png,semantic label match
+女神赛代@3x.png,src/assets/text/home_event/zh_tw/ic_home_goddess_track.png,semantic label match
+个人赛代@3x.png,src/assets/text/home_event/zh_tw/ic_home_personal_track.png,semantic label match
+每日任务@3x.png,src/assets/text/single_host_leaderboard_event/zh_tw/btn_daily_mission.png,dimension 804x48 exact match
+每日任务@3x.png,src/assets/text/multi_host_leaderboard_event/zh_tw/btn_daily_mission.png,dimension 804x48 exact match
+头图@3x.png,src/assets/text/single_host_leaderboard_event/zh_tw/bg_main.png,approved mapping
+头图@3x(1).png,src/assets/text/crush_boy_leaderboard_event/zh_tw/bg_main.png,approved mapping
+头图@3x(2).png,src/assets/text/crush_girl_leaderboard_event/zh_tw/bg_main.png,approved mapping
+头图@3x(3).png,src/assets/text/radio_leaderboard_event/zh_tw/bg_main.png,approved mapping
+头图@3x(4).png,src/assets/text/championship_leaderboard_event/zh_tw/bg_main.png,approved mapping
