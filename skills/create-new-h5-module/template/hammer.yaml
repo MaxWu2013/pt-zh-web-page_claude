@@ -1,0 +1,18 @@
+project_id: 21
+directory_id: 1313
+api_token: 3acf7100e0384ec3b1a60caaef8bfb564e7ea95e157740451cf6c66ef1003e25e2baf17eea74fd34
+base_path: ./
+base_url: https://olaparty.crowdin.com
+preserve_hierarchy: true
+files:
+  - source: /h5-template/src/locale/zh_cn.json
+    translation: /h5-template/src/locale/%two_letters_code%.json
+    dest: /react-web/h5-template_h5.json
+    type: json
+    languages_mapping:
+      two_letters_code:
+        zh-TW: zh_tw
+    excluded_target_languages: [
+      "en",
+    ]
+            

@@ -1,0 +1,23 @@
+.section-container {
+  .section-middle {
+    //background: url('@src/assets/bg/bg_container_middle.png') top center/100% repeat-y;
+  }
+
+  .section-bottom {
+    //background: url('@src/assets/bg/bg_container_bottom.png') top center/100% no-repeat;
+  }
+}
+
+.container-rule {
+  .section-top {
+    //background: url('@src/assets/text/zh_tw/container_top/bg_container_event_rule_top.png') top center/100% no-repeat;
+
+    &.zh_cn {
+      //background: url('@src/assets/text/zh_cn/container_top/bg_container_event_rule_top.png') top center/100% no-repeat;
+    }
+  }
+}
+
+.btn-close {
+  background: url('@src/assets/common/btn_close.png') top center/100% no-repeat;
+}

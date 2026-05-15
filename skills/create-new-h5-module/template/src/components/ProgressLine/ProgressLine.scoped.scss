@@ -1,0 +1,51 @@
+.bg-progress-bar {
+	background: #080503;
+}
+
+.ic-milestone {
+	//background: url('@src/assets/ic/common/ic_milestone-inactive.png') top center/100% no-repeat;
+
+	&.active {
+		//background: url('@src/assets/ic/common/ic_milestone-active.png') top center/100% no-repeat;
+	}
+}
+
+.bg-reward {
+	//background: url('@src/assets/bg/common/bg_reward-inactive.png') top center/100% no-repeat;
+
+	&.active {
+		//background: url('@src/assets/bg/common/bg_reward-active.png') top center/100% no-repeat;
+	}
+}
+
+.bg-progress-bar-fill {
+	background: linear-gradient(to bottom, #eacda7, #cf7c1b);
+}
+
+.bubble {
+	background: linear-gradient(to bottom, #d5d5d5, #797979);
+	border-radius: 45px;
+	position: relative;
+	display: inline-block;
+
+	::after {
+		content: '';
+		position: absolute;
+		bottom: -6px;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 0;
+		height: 0;
+		border-left: 5px solid transparent;
+		border-right: 5px solid transparent;
+		border-top: 7px solid #797979; /* same as bottom color of gradient */
+	}
+
+	&.active {
+		background: linear-gradient(to bottom, #eadbc0, #a77d3f); /* Gold gradient */
+
+		::after {
+			border-top-color: #a77d3f; /* same as bottom color of gradient */
+		}
+	}
+}

@@ -1,0 +1,16 @@
+syntax = "proto3";
+package pbapi;
+option go_package = "app/pb/pbapi";
+
+service ExampleApi {
+  rpc Info(ExampleInfo.Request) returns (ExampleInfo.Response) {}
+}
+
+message ExampleInfo {
+  message Request {
+  }
+  message Response {
+    bool success = 1;
+    string msg   = 2;
+  }
+}
