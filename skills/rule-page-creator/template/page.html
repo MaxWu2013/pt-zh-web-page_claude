@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+		/>
+		<script src="https://cdn.tailwindcss.com"></script>
+		<style>
+			body {
+				background-color: #ffffff;
+				height: 100%;
+				width: 100%;
+			}
+
+			h1,
+			h2 {
+				color: #313131;
+			}
+
+			p {
+				color: #313131;
+			}
+
+			/* Dark scheme (Figma "dark-schema") — applied by plugin/dark-mode.js via
+			   ?darkMode=1 or native isDarkTheme. theme-css/dark-theme.css supplies the
+			   #1c1c1e background, which matches the design exactly. It only recolors
+			   h5/h6/p, so h1/h2 need their own rule; `p` is restated with !important so
+			   this page keeps the designed #ffffff regardless of the shared stylesheet. */
+			.dark h1,
+			.dark h2 {
+				color: #ffffff;
+			}
+
+			.dark p {
+				color: #ffffff !important;
+			}
+
+			/*#IF CLOSE_BUTTON*/
+			/* Opaque backing for the sticky #pageTitleBar so scrolling content does
+			   not show through; matches the body background in both themes. */
+			#pageTitleBar {
+				background-color: #ffffff;
+			}
+
+			.dark #pageTitleBar {
+				background-color: #1c1c1e;
+			}
+
+			/* The close icon's glyph is a dark fill (#202020 at 40% opacity), nearly
+			   invisible on the dark #1c1c1e background, so invert it in dark mode. */
+			.dark #closeBtn img {
+				filter: invert(1);
+			}
+			/*#ENDIF*/
+		</style>
+	</head>
+	<body id="body">
+		<div id="pageContainer" class="pb-[80px]"></div>
+	</body>
+</html>
+<script type="module">
+	import { setTitle, isInApp/*#IF CLOSE_BUTTON*/, navigateBack/*#ENDIF*/ } from './plugin/native.js';
+	import { replacePlatformName } from './plugin/replace.min.js';
+
+	function getQuery(name) {
+		let query = {};
+		if (!window.location.search) return;
+		window.location.search
+			.split('?')[1]
+			.split('&')
+			.forEach(function (item) {
+				var param = item.split('=');
+				query[param[0]] = param[1];
+			});
+		if (name) return query[name];
+		else return query;
+	}
+
+	let whitelistedLan = ['zh_tw', 'zh_cn', 'en'];
+	let lan = getQuery('lan') || 'zh_cn';
+	lan = lan.replace('-', '_').toLocaleLowerCase();
+	if (!whitelistedLan.includes(lan)) {
+		lan = 'zh_cn';
+	}
+	let script = document.createElement('script');
+	script.src = './__PAGE_SLUG__-locale/' + lan + '.js?v=1';
+	document.body.appendChild(script);
+
+	script.onload = function () {
+		document.title = locale.document_title;
+		if (isInApp) {
+			setTitle(locale.document_title);
+		}
+
+		let _dom = `
+<!--#IF CLOSE_BUTTON-->
+      <div id="pageTitleBar" class="sticky top-0 z-10 px-[24px]">
+        <h1 class="py-[18px] text-center text-[16px] font-semibold leading-[22px]">${locale.title}</h1>
+        <button type="button" id="closeBtn" aria-label="close" class="absolute right-[18px] top-1/2 -translate-y-1/2">
+          <img class="h-[30px] w-[30px]" src="./imgs/__PAGE_SLUG__/icon_close.svg" alt="" />
+        </button>
+      </div>
+<!--#ENDIF-->
+<!--#IF !CLOSE_BUTTON-->
+      <h1 class="px-[24px] py-[18px] text-center text-[16px] font-semibold leading-[22px]">${locale.title}</h1>
+<!--#ENDIF-->
+      <div class="px-[24px] pb-[40px]">
+        <div class="flex flex-col gap-[24px]">
+<!--#FOREACH SECTION-->
+          <div class="flex flex-col gap-[12px]">
+            <h2 class="text-[16px] font-semibold leading-[22px]">${locale.__SECTION_KEY___title}</h2>
+            <p class="text-[14px] leading-[20px]">${replacePlatformName(locale.__SECTION_KEY___content)}</p>
+          </div>
+<!--#ENDFOREACH-->
+        </div>
+<!--#IF WITH_IMAGE-->
+        <img
+          class="mt-[10px] h-[133px] w-[75px] object-cover"
+          src="./imgs/__PAGE_SLUG__/bg-size-sample.png"
+          alt="${locale.title}"
+        />
+<!--#ENDIF-->
+      </div>
+    `;
+		document.getElementById('pageContainer').insertAdjacentHTML('beforeend', _dom);
+//#IF CLOSE_BUTTON
+		document.getElementById('closeBtn').addEventListener('click', navigateBack);
+	};
+</script>
+<script src="./plugin/dark-mode.js" type="module"></script>
+<script src="https://unpkg.com/vconsole@latest/dist/vconsole.min.js"></script>
+<script src="./plugin/vconsole.js"></script>

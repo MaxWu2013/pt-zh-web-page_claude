@@ -1,0 +1,9 @@
+{
+  "env": {
+    "TELEGRAM_STATE_DIR": "/Users/wujincheng/.claude/channels/telegram-h5"
+  },
+  "enabledPlugins": {
+    "runner@sub-agents-skills": true,
+    "telegram@claude-plugins-official": true
+  }
+}
